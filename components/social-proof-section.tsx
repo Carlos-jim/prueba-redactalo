@@ -130,7 +130,7 @@ export function SocialProofSection() {
             }}
             transition={{
               ease: "linear",
-              duration: 4,
+              duration: 30,
               repeat: Infinity,
             }}
           >

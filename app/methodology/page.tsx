@@ -1,32 +1,31 @@
-"use client";
+"use client"
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, TrendingUp, Users } from "lucide-react";
 import { motion } from "framer-motion";
-
+import { useLanguage } from "@/components/language-provider";
 
 export default function MethodologyPage() {
+  const { t } = useLanguage();
+
   const methodologySteps = [
     {
       icon: Target,
-      title: "Análisis de Objetivos",
-      description:
-        "Definimos tus metas específicas y audiencia objetivo para crear una estrategia personalizada.",
+      title: t("methodology.step1.title"),
+      description: t("methodology.step1.description"),
       color: "bg-blue-100 text-blue-600",
     },
     {
       icon: Users,
-      title: "Creación de Contenido",
-      description:
-        "Desarrollamos posts auténticos que reflejan tu personalidad y expertise profesional.",
+      title: t("methodology.step2.title"),
+      description: t("methodology.step2.description"),
       color: "bg-green-100 text-green-600",
     },
     {
       icon: TrendingUp,
-      title: "Optimización Continua",
-      description:
-        "Analizamos métricas y ajustamos la estrategia para maximizar el engagement y conversiones.",
+      title: t("methodology.step3.title"),
+      description: t("methodology.step3.description"),
       color: "bg-purple-100 text-purple-600",
     },
   ];
@@ -37,7 +36,7 @@ export default function MethodologyPage() {
         <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-4">
-              Nuestra Metodología
+              {t("methodology.badge")}
             </Badge>
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -45,7 +44,7 @@ export default function MethodologyPage() {
               transition={{ duration: 0.6 }}
               className="text-4xl font-bold tracking-tight sm:text-5xl mb-6"
             >
-              Metodología de Redactalo
+              {t("methodology.mainTitle")}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -53,7 +52,7 @@ export default function MethodologyPage() {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-xl text-muted-foreground leading-relaxed"
             >
-              El método Redactalo está diseñado para ayudar a profesionales y empresas B2B a conseguir visibilidad, autoridad y ventas creando contenido auténtico y personal para tener resultados en LinkedIn.
+              {t("methodology.mainSubtitle")}
             </motion.p>
           </div>
         </section>
@@ -68,40 +67,28 @@ export default function MethodologyPage() {
               className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-blue-100 to-purple-100 p-10 shadow-xl"
             >
               <div className="text-center">
-                <h2 className="text-3xl font-bold mb-8">Transformación con Redactalo</h2>
+                <h2 className="text-3xl font-bold mb-8">{t("methodology.transformation.title")}</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-3 items-center text-center gap-4">
                   <div>
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      className="w-16 h-16 bg-blue-500 rounded-full text-white text-xl font-bold flex items-center justify-center mx-auto mb-2 shadow-lg"
-                    >
+                    <div className="w-16 h-16 bg-blue-500 rounded-full text-white text-xl font-bold flex items-center justify-center mx-auto mb-2 shadow-lg">
                       1
-                    </motion.div>
-                    <p className="text-sm font-medium">Situación Actual</p>
+                    </div>
+                    <p className="text-sm font-medium">{t("methodology.transformation.step1")}</p>
                   </div>
                   <div className="hidden sm:block">
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      className="w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500"
-                    />
+                    <div className="w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500" />
                   </div>
                   <div>
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      className="w-16 h-16 bg-green-500 rounded-full text-white text-xl font-bold flex items-center justify-center mx-auto mb-2 shadow-lg"
-                    >
+                    <div className="w-16 h-16 bg-green-500 rounded-full text-white text-xl font-bold flex items-center justify-center mx-auto mb-2 shadow-lg">
                       ✓
-                    </motion.div>
-                    <p className="text-sm font-medium">Resultados Reales</p>
+                    </div>
+                    <p className="text-sm font-medium">{t("methodology.transformation.step2")}</p>
                   </div>
                 </div>
                 <div className="mt-8 text-center">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="inline-block px-6 py-2 rounded-full bg-white text-purple-600 font-semibold shadow"
-                  >
-                    Metodología Redactalo como puente de éxito
-                  </motion.div>
+                  <div className="inline-block px-6 py-2 rounded-full bg-white text-purple-600 font-semibold shadow">
+                    {t("methodology.transformation.bridge")}
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -117,26 +104,22 @@ export default function MethodologyPage() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-3xl font-bold mb-6">7 Años de Experiencia</h2>
+                <h2 className="text-3xl font-bold mb-6">{t("methodology.experience.title")}</h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                  Después de 7 años creando contenido en redes sociales, tanto para nosotros como para clientes, hemos decidido sintetizar todo este conocimiento en nuestro propio algoritmo para crear tu estrategia a medida según tus necesidades y objetivos.
+                  {t("methodology.experience.p1")}
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Nuestra metodología está basada en los conceptos que realmente importan para tener resultados y conseguir visibilidad, autoridad y ventas.
+                  {t("methodology.experience.p2")}
                 </p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
                 className="relative"
               >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="w-full h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg shadow-lg flex items-center justify-center"
-                >
+                <div className="w-full h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg shadow-lg flex items-center justify-center">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
                       <svg
@@ -153,9 +136,9 @@ export default function MethodologyPage() {
                         />
                       </svg>
                     </div>
-                    <p className="text-gray-600 font-medium">Equipo trabajando en estrategia</p>
+                    <p className="text-gray-600 font-medium">{t("methodology.experience.imageAlt")}</p>
                   </div>
-                </motion.div>
+                </div>
               </motion.div>
             </div>
           </div>
@@ -171,7 +154,7 @@ export default function MethodologyPage() {
                 viewport={{ once: true }}
                 className="text-3xl font-bold mb-4"
               >
-                Cómo Funciona Nuestra Metodología
+                {t("methodology.howItWorks.title")}
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -180,7 +163,7 @@ export default function MethodologyPage() {
                 viewport={{ once: true }}
                 className="text-xl text-muted-foreground"
               >
-                Un proceso probado en 3 pasos para transformar tu presencia en LinkedIn
+                {t("methodology.howItWorks.subtitle")}
               </motion.p>
             </div>
 
